@@ -129,13 +129,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/sarahhafsia/CLionProjects/PROJET-P1/cmake-build-debug
 
-build codegen: phony
-
-# =============================================================================
-
-#############################################
-# Folder: /Users/sarahhafsia/CLionProjects/PROJET-P1/cmake-build-debug
-
 build all: phony ProjetC
 
 # =============================================================================
