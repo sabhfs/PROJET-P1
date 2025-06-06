@@ -13,4 +13,5 @@ add_executable(ProjetC
         dataframe.h
         sort.h
         list.h
+        tp.c
 )

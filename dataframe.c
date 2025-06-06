@@ -3,7 +3,15 @@
 #include "dataframe.h"
 #include "column.h"
 
-CDataframe * createDataframe();
-void addColumn(Cdataframe * df, COLUMN * col);
-void printDataframe(Cdataframe * df);
-void addRow(Cdataframe * df, int * value);
+Dataframe * createDataframe() {
+
+}
+void addColumn(Dataframe * df, COLUMN * col) {
+
+}
+void printDataframe(Dataframe * df) {
+
+}
+void addRow(Dataframe * df, int * value) {
+
+}

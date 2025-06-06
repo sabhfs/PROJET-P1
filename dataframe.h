@@ -1,15 +1,17 @@
 #ifndef DATAFRAME_H
 #define DATAFRAME_H
 
+#include "column.h"
+
 typedef struct {
     COLUMN ** colums;
     int column_count;
     int row_count;
-} Cdataframe;
+} Dataframe;
 
-CDataframe * createDataframe();
-void addColumn(Cdataframe * df, COLUMN * col);
-void printDataframe(Cdataframe * df);
-void addRow(Cdataframe * df, int * value);
+Dataframe * createDataframe();
+void addColumn(Dataframe * df, COLUMN * col);
+void printDataframe(Dataframe * df);
+void addRow(Dataframe * df, int * value);
 
 #endif //DATAFRAME_H
