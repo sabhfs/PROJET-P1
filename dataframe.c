@@ -25,22 +25,25 @@ void addRow(Dataframe * df, int * value) {
 
 void printDataframe(Dataframe * df) {
     for (int i = 0; i < df->column_count; i++) {
-        printf("%t", df->columns[i]->title);
+        printf("%s \t", df->columns[i]->title);
     }
     printf("\n");
 
     for (int row = 0; row < df->row_count; row++) {
         for (int col=0; col < df->column_count; col++) {
-            printf("%d \t", df->columns[col]->values[row]);
+            printf("%d    \t", df->columns[col]->values[row]);
         }
         printf("\n");
     }
 }
 
 void deleteDataframe(Dataframe * df) {
-    for (int i = 0; i < df->column_count; i++) {
-        delete_column(df->columns[i]);
-    }
+    if (df == NULL) return;
+     if (df-> columns != NULL && df-> row_count > 0) {
+         for (int i = 0; i < df->column_count; i++) {
+             if (df-> columns[i]) delete_column(df->columns[i]);
+         }
+         free(df->columns);
+     }
     free(df);
-    free(df->columns);
 }

@@ -1,38 +1,56 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 #include "dataframe.h"
 #include "column.h"
 
-// test colonne
+
 int main() {
-    COLUMN * col = createColumn("Age");
-    insert_value(col, 25);
-    insert_value(col, 18);
-    insert_value(col, 19);
+    int exo;
+    exo = 0;
+    printf("Quelle fonction voulez-vous tester ? \n");
+    scanf("%d", &exo);
 
-    print_column(col);
+    switch (exo) {
 
-    delete_column(col);
+        // test column
+        case 1: {
+            COLUMN * col = createColumn("Age");
+            insert_value(col, 25);
+            insert_value(col, 18);
+            insert_value(col, 19);
 
-    Dataframe * df = createDataframe();
-    COLUMN * col1 = createColumn("Age");
-    COLUMN * col2 = createColumn("Score");
+            print_column(col);
 
-    addColumn(df, col1);
-    addColumn(df, col2);
+            delete_column(col);
+            break;
+        }
 
-    int row1[] = {20, 88};
-    int row2[] = {25, 75};
-    int row3[] = {30, 90};
+        // test column
+        case 2: {
+            Dataframe * df = createDataframe();
+            COLUMN * col1 = createColumn("Age");
+            COLUMN * col2 = createColumn("Score");
 
-    addRow(df, row1);
-    addRow(df, row2);
-    addRow(df, row3);
+            addColumn(df, col1);
+            addColumn(df, col2);
 
-    printDataframe(df);
-    deleteDataframe(df);
+            int row1[] = {20, 88};
+            int row2[] = {25, 75};
+            int row3[] = {30, 90};
+
+            addRow(df, row1);
+            addRow(df, row2);
+            addRow(df, row3);
+
+            printDataframe(df);
+            deleteDataframe(df);
+            break;
+        }
+
+        default: {
+            printf("Erreur\n");
+        }
+    }
 
     return 0;
 }

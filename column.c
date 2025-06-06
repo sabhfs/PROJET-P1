@@ -9,6 +9,7 @@ COLUMN * createColumn(char * title) {
     COLUMN * col = (COLUMN *) malloc(sizeof(COLUMN));
     if (col == NULL) return NULL;
     col->title = (char *) malloc(strlen(title) + 1);
+    strcpy(col->title, title);
     col->values = NULL;
     col->max_size = 0;
     col->size = 0;
