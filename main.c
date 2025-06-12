@@ -25,7 +25,7 @@ int main() {
             break;
         }
 
-        // test column
+        // test dataframe
         case 2: {
             Dataframe * df = createDataframe();
             COLUMN * col1 = createColumn("Age");
