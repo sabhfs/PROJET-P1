@@ -10,9 +10,9 @@ typedef struct {
     int * values;
 } COLUMN;
 
-COLUMN * createColumn(char * title);
-int insert_value(COLUMN * col, int value);
-void delete_column(COLUMN * col);
-void print_column(COLUMN * col);
+COLUMN * createColumn(const char * title);
+int insertValue(COLUMN * col, int value);
+void deleteColumn(COLUMN * col);
+void printColumn(const COLUMN * col);
 
-#endif //COLUMN_H
+#endif

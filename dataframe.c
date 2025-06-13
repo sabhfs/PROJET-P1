@@ -4,6 +4,7 @@
 
 Dataframe * createDataframe() {
     Dataframe * df = (Dataframe *)malloc(sizeof(Dataframe));
+    if (df == NULL) return NULL;
     df->columns = NULL;
     df->column_count = 0;
     df->row_count = 0;
@@ -11,19 +12,22 @@ Dataframe * createDataframe() {
 }
 
 void addColumn(Dataframe * df, COLUMN * col) {
-    df->columns = realloc(df->columns, sizeof(COLUMN) * (df->column_count + 1));
-    df->columns[df->column_count] = col;
-    df->column_count++;
+    if (df == NULL || col == NULL) return;
+    df->columns = realloc(df->columns, sizeof(COLUMN*) * (df->column_count + 1));
+    df->columns[df->column_count++] = col;
 }
 
-void addRow(Dataframe * df, int * value) {
+void addRow(Dataframe * df, const int * value) {
+    if (df == NULL || value == NULL) return;
     for (int i = 0; i < df->column_count; i++) {
-        insert_value(df->columns[i], value[i]);
+        insertValue(df->columns[i], value[i]);
     }
     df->row_count++;
 }
 
-void printDataframe(Dataframe * df) {
+void printDataframe(const Dataframe * df) {
+    if (df == NULL ) return;
+
     for (int i = 0; i < df->column_count; i++) {
         printf("%s \t", df->columns[i]->title);
     }
@@ -39,11 +43,9 @@ void printDataframe(Dataframe * df) {
 
 void deleteDataframe(Dataframe * df) {
     if (df == NULL) return;
-     if (df-> columns != NULL && df-> row_count > 0) {
-         for (int i = 0; i < df->column_count; i++) {
-             if (df-> columns[i]) delete_column(df->columns[i]);
-         }
-         free(df->columns);
-     }
+    for (int i = 0; i < df->column_count; i++) {
+        deleteColumn(df->columns[i]);
+    }
+    free(df->columns);
     free(df);
 }

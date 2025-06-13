@@ -11,8 +11,8 @@ typedef struct {
 
 Dataframe * createDataframe();
 void addColumn(Dataframe * df, COLUMN * col);
-void printDataframe(Dataframe * df);
-void addRow(Dataframe * df, int * value);
+void printDataframe(const Dataframe * df);
+void addRow(Dataframe * df, const int * value);
 void deleteDataframe(Dataframe * df);
 
 #endif //DATAFRAME_H
