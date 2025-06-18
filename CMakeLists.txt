@@ -13,6 +13,4 @@ add_executable(ProjetC
         dataframe.h
         sort.h
         list.h
-        "column 2.0.h"
-        "column 2.0.c"
 )

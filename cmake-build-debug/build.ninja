@@ -79,12 +79,6 @@ build CMakeFiles/ProjetC.dir/list.c.o: C_COMPILER__ProjetC_unscanned_Debug /User
   OBJECT_DIR = CMakeFiles/ProjetC.dir
   OBJECT_FILE_DIR = CMakeFiles/ProjetC.dir
 
-build CMakeFiles/ProjetC.dir/tp.c.o: C_COMPILER__ProjetC_unscanned_Debug /Users/sarahhafsia/CLionProjects/PROJET-P1/tp.c || cmake_object_order_depends_target_ProjetC
-  DEP_FILE = CMakeFiles/ProjetC.dir/tp.c.o.d
-  FLAGS = -g -std=gnu99 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/ProjetC.dir
-  OBJECT_FILE_DIR = CMakeFiles/ProjetC.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ProjetC
@@ -93,7 +87,7 @@ build CMakeFiles/ProjetC.dir/tp.c.o: C_COMPILER__ProjetC_unscanned_Debug /Users/
 #############################################
 # Link the executable ProjetC
 
-build ProjetC: C_EXECUTABLE_LINKER__ProjetC_Debug CMakeFiles/ProjetC.dir/main.c.o CMakeFiles/ProjetC.dir/column.c.o CMakeFiles/ProjetC.dir/dataframe.c.o CMakeFiles/ProjetC.dir/sort.c.o CMakeFiles/ProjetC.dir/list.c.o CMakeFiles/ProjetC.dir/tp.c.o
+build ProjetC: C_EXECUTABLE_LINKER__ProjetC_Debug CMakeFiles/ProjetC.dir/main.c.o CMakeFiles/ProjetC.dir/column.c.o CMakeFiles/ProjetC.dir/dataframe.c.o CMakeFiles/ProjetC.dir/sort.c.o CMakeFiles/ProjetC.dir/list.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/ProjetC.dir
   POST_BUILD = :
