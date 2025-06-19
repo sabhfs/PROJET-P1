@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "dataframe.h"
 #include "column.h"
 #include "column 2.0.h"
-
+#include "sort.h"
 
 int main() {
     int exo;
@@ -77,6 +78,50 @@ int main() {
             // Suppression de la colonne (5.3)
             delete_column(col);
 
+            break;
+        }
+
+        case 4: {
+            Column col;
+            col.size = 5;
+            col.column_type = INT;
+            col.data = malloc(sizeof(void*) * col.size);
+            int *v0 = malloc(sizeof(int)); *v0 = 42;
+            int *v1 = malloc(sizeof(int)); *v1 = 5;
+            int *v2 = malloc(sizeof(int)); *v2 = 17;
+            int *v3 = malloc(sizeof(int)); *v3 = 23;
+            int *v4 = malloc(sizeof(int)); *v4 = 5;
+            col.data[0] = v0;
+            col.data[1] = v1;
+            col.data[2] = v2;
+            col.data[3] = v3;
+            col.data[4] = v4;
+
+            printf("--- Avant tri ---\n");
+            for (int i = 0; i < col.size; i++) {
+                printf("[%d] %d\n", i, *((int*)col.data[i]));
+            }
+
+            printf("\n--- Tri croissant ---\n");
+            sort(&col, ASC);
+            print_col_sorted(&col, ASC);
+
+            printf("\n--- Tri décroissant ---\n");
+            sort(&col, DESC);
+            print_col_sorted(&col, DESC);
+
+            printf("\nCheck index = %d\n", check_index(&col));
+            erase_index(&col);
+            printf("Index effacé.\n");
+            for (int i = 0; i < col.size; i++) {
+                free(col.data[i]);
+            }
+
+            int value_to_find = 17;
+            int found = search_value_in_column(&col, &value_to_find);
+            printf("\nRecherche de %d : %s\n", value_to_find, found == 1 ? "trouvée" : "non trouvée");
+
+            free(col.data);
             break;
         }
 

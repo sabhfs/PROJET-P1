@@ -38,7 +38,7 @@ typedef struct {
 
 Column * create_column(Enum_Type type);
 int insert_value(Column * col, void * value);
-void delete_column(Column *col);
+void delete_column(Column* col);
 void print_value(Column * col, unsigned long long int i, char * str, int size);
 void print_column(const Column *col);
 void info_column(Column * col);

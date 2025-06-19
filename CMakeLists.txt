@@ -15,4 +15,5 @@ add_executable(ProjetC
         list.h
         "column 2.0.c"
         "column 2.0.h"
+        brouillon.c
 )

@@ -85,6 +85,12 @@ build CMakeFiles/ProjetC.dir/column_2.0.c.o: C_COMPILER__ProjetC_unscanned_Debug
   OBJECT_DIR = CMakeFiles/ProjetC.dir
   OBJECT_FILE_DIR = CMakeFiles/ProjetC.dir
 
+build CMakeFiles/ProjetC.dir/brouillon.c.o: C_COMPILER__ProjetC_unscanned_Debug /Users/sarahhafsia/CLionProjects/PROJET-P1/brouillon.c || cmake_object_order_depends_target_ProjetC
+  DEP_FILE = CMakeFiles/ProjetC.dir/brouillon.c.o.d
+  FLAGS = -g -std=gnu99 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/ProjetC.dir
+  OBJECT_FILE_DIR = CMakeFiles/ProjetC.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ProjetC
@@ -93,7 +99,7 @@ build CMakeFiles/ProjetC.dir/column_2.0.c.o: C_COMPILER__ProjetC_unscanned_Debug
 #############################################
 # Link the executable ProjetC
 
-build ProjetC: C_EXECUTABLE_LINKER__ProjetC_Debug CMakeFiles/ProjetC.dir/main.c.o CMakeFiles/ProjetC.dir/column.c.o CMakeFiles/ProjetC.dir/dataframe.c.o CMakeFiles/ProjetC.dir/sort.c.o CMakeFiles/ProjetC.dir/list.c.o CMakeFiles/ProjetC.dir/column_2.0.c.o
+build ProjetC: C_EXECUTABLE_LINKER__ProjetC_Debug CMakeFiles/ProjetC.dir/main.c.o CMakeFiles/ProjetC.dir/column.c.o CMakeFiles/ProjetC.dir/dataframe.c.o CMakeFiles/ProjetC.dir/sort.c.o CMakeFiles/ProjetC.dir/list.c.o CMakeFiles/ProjetC.dir/column_2.0.c.o CMakeFiles/ProjetC.dir/brouillon.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/ProjetC.dir
   POST_BUILD = :
