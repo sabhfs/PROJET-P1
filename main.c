@@ -86,11 +86,11 @@ int main() {
             col.size = 5;
             col.column_type = INT;
             col.data = malloc(sizeof(void*) * col.size);
-            int *v0 = malloc(sizeof(int)); *v0 = 42;
-            int *v1 = malloc(sizeof(int)); *v1 = 5;
-            int *v2 = malloc(sizeof(int)); *v2 = 17;
-            int *v3 = malloc(sizeof(int)); *v3 = 23;
-            int *v4 = malloc(sizeof(int)); *v4 = 5;
+            Column_Type *v0 = malloc(sizeof(int)); *v0 = (Column_Type)42;
+            Column_Type *v1 = malloc(sizeof(int)); *v1 = (Column_Type)5;
+            Column_Type *v2 = malloc(sizeof(int)); *v2 = (Column_Type)17;
+            Column_Type *v3 = malloc(sizeof(int)); *v3 = (Column_Type)23;
+            Column_Type *v4 = malloc(sizeof(int)); *v4 = (Column_Type)5;
             col.data[0] = v0;
             col.data[1] = v1;
             col.data[2] = v2;
@@ -98,22 +98,24 @@ int main() {
             col.data[4] = v4;
 
             printf("--- Avant tri ---\n");
-            for (int i = 0; i < col.size; i++) {
+            for (unsigned int i = 0; i < col.size; i++) {
                 printf("[%d] %d\n", i, *((int*)col.data[i]));
             }
 
             printf("\n--- Tri croissant ---\n");
             sort(&col, ASC);
             print_col_sorted(&col, ASC);
+            erase_index(&col);
 
             printf("\n--- Tri décroissant ---\n");
             sort(&col, DESC);
             print_col_sorted(&col, DESC);
+            erase_index(&col);
 
             printf("\nCheck index = %d\n", check_index(&col));
             erase_index(&col);
             printf("Index effacé.\n");
-            for (int i = 0; i < col.size; i++) {
+            for (unsigned int i = 0; i < col.size; i++) {
                 free(col.data[i]);
             }
 

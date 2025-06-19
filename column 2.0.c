@@ -115,7 +115,7 @@ void delete_column(Column *col) {
     free(col);
 }
 
-void print_value(Column* col, unsigned long long int i, char* str, int size) {
+void print_value(const Column* col, unsigned long long int i, char* str, int size) {
     if (!col || !str || i >= col->size || !col->data || !col->data[i]) {
         snprintf(str, size, "NULL");
         return;

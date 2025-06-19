@@ -65,7 +65,7 @@ int partition(Column *col, int *index, int left, int right, int sort_dir) {
     for (int j = left; j < right; j++) {
         int cmp = compare_column_values(col, index[j], pivot, sort_dir);
         if (cmp <= 0) {
-            i++;
+			i++;
             swap(&index[i], &index[j]);
         }
     }
@@ -87,8 +87,8 @@ void quicksort_index(Column *col, int *index, int left, int right, int sort_dir)
 
 void sort(Column *col, int sort_dir) {
     if (!col || col->size == 0) return;
-    if (col->index) free(col->index);
-    col->index = malloc(sizeof(int) * col->size);
+    if (!col && col->index) free(col->index);
+    col->index = calloc(col->size, sizeof(int));
     if (!col->index) return;
     for (unsigned long long i = 0; i < col->size; i++) {
         col->index[i] = i;

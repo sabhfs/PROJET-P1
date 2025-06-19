@@ -30,16 +30,16 @@ typedef struct {
     unsigned int max_size;
     Enum_Type column_type;
     Column_Type ** data;
-    unsigned long long int * index;
+    int * index;
     char valid_index;
-    unsigned int index_size;
+    int index_size;
     char sort_dir;
 } Column;
 
 Column * create_column(Enum_Type type);
 int insert_value(Column * col, void * value);
 void delete_column(Column* col);
-void print_value(Column * col, unsigned long long int i, char * str, int size);
+void print_value(const Column * col, unsigned long long int i, char * str, int size);
 void print_column(const Column *col);
 void info_column(Column * col);
 
